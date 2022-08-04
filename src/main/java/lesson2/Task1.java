@@ -16,11 +16,11 @@ public class Task1 {
         System.out.print("Hello! How old are you: ");
         int age = sc.nextInt();
         if (age >= 7 && age <= 13) {
-            System.out.println("Welcome to the first group!");
+            System.out.println("1");
         } else if (age >= 14 && age <= 17) {
-            System.out.println("Welcome to the second group!");
+            System.out.println("2");
         } else if (age >= 18 && age <= 65) {
-            System.out.println("Welcome to the third group!");
+            System.out.println("3");
         } else {
             System.out.println("-1");
         }
