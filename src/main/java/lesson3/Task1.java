@@ -21,7 +21,7 @@ public class Task1 {
 
     public static int[] makeMassiveUsingKeybord() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter array size: -> ");
+        System.out.print("Enter array size: → ");
         int arrSize = scanner.nextInt();
         int[] array = new int[arrSize];
         for (int i = 0; i < arrSize; i++) {
