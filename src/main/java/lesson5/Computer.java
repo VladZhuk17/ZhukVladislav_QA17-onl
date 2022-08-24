@@ -16,97 +16,16 @@ import java.util.Scanner;
         - выключить (аналогично включению)
         - при превышении лимита ресурса комп сгорает */
 
-<<<<<<< HEAD
-    public class Computer {
-
-        static Scanner scanner = new Scanner(System.in);
-        static Random random = new Random();
-
-        private boolean isOn;
-        private boolean processor;
-        private boolean hardDrive;
-        private boolean memory;
-        private int resource;
-
-        public Computer(boolean processor, boolean hardDrive, boolean memory, int resource) {
-            this.processor = processor;
-            this.hardDrive = hardDrive;
-            this.memory = memory;
-            this.resource = resource;
-        }
-
-        public void info() {
-            System.out.print("[");
-            if (processor == true) {
-                System.out.print("processor есть; ");
-            } else {
-                System.out.print("processor нет; ");
-            }
-            if (hardDrive == true) {
-                System.out.print("hardDrive есть; ");
-            } else {
-                System.out.print("hardDrive нет; ");
-            }
-            if (memory == true) {
-                System.out.print("memory есть; ");
-            } else {
-                System.out.print("memory нет; ");
-            }
-            System.out.print(resource + "]");
-        }
-
-        public int turnOn() {
-            if (isOn = true) {
-                if (resource > 0) {
-                    System.out.println("Для запуска компьютера введите число 0 либо 1");
-                    int randomNumberForTernOn = random.nextInt(2);
-                    int scannerNumberForTernOn = scanner.nextInt(2);
-                    if (randomNumberForTernOn == scannerNumberForTernOn) {
-                        resource--;
-                        System.out.println("Компьютер запущен, циклов осталось: " + resource);
-                        isOn = false;
-                    } else {
-                        resource = 0;
-                        System.out.println("Произошел сбой, компьютер сгорел");
-                    }
-                } else {
-                    resource = 0;
-                    System.out.println("Компьютер сгорел");
-                }
-            }
-            return resource;
-        }
-
-        public void turnOff() {
-            System.out.println("Для выключения компьютера введите число 0 либо 1");
-            int scannerNumberForTernOff = scanner.nextInt(2);
-            int randomNumberForTernOff = random.nextInt(2);
-            if (scannerNumberForTernOff == randomNumberForTernOff) {
-                System.out.println("Компьютер выключается");
-            } else {
-                System.out.println("Компьютер не выключен, произошёл сбой");
-            }
-        }
-
-        public static void main(String[] args) {
-            lesson5.Computer asus = new lesson5.Computer(true, true, true, 15);
-            lesson5.Computer apple = new lesson5.Computer(false, false, true, 22);
-            apple.turnOn();
-            apple.turnOn();
-            apple.turnOff();
-        }
-    }
-=======
 public class Computer {
 
     static Scanner scanner = new Scanner(System.in);
     static Random random = new Random();
 
-    boolean isOn;
-    boolean processor;
-    boolean hardDrive;
-    boolean memory;
-    int resource;
+    private boolean isOn;
+    private boolean processor;
+    private boolean hardDrive;
+    private boolean memory;
+    private int resource;
 
     public Computer(boolean processor, boolean hardDrive, boolean memory, int resource) {
         this.processor = processor;
@@ -116,49 +35,63 @@ public class Computer {
     }
 
     public void info() {
-        System.out.println("[есть”, “есть”, “есть”, " + resource + " циклов]");
+        System.out.print("[");
+        if (processor == true) {
+            System.out.print("processor есть; ");
+        } else {
+            System.out.print("processor нет; ");
+        }
+        if (hardDrive == true) {
+            System.out.print("hardDrive есть; ");
+        } else {
+            System.out.print("hardDrive нет; ");
+        }
+        if (memory == true) {
+            System.out.print("memory есть; ");
+        } else {
+            System.out.print("memory нет; ");
+        }
+        System.out.print(resource + "]");
     }
 
     public int turnOn() {
-
-        if (resource > 0) {
-            System.out.println("Для запуска компьютера введите число 0 либо 1");
-            int randomNumberForTernOn = random.nextInt(2);
-            int scannerNumberForTernOn = scanner.nextInt();
-            if (randomNumberForTernOn == scannerNumberForTernOn) {
-                resource--;
-                System.out.println("Компьютер запущен, циклов осталось: " + resource);
+        if (isOn = true) {
+            if (resource > 0) {
+                System.out.println("Для запуска компьютера введите число 0 либо 1");
+                int randomNumberForTernOn = random.nextInt(2);
+                int scannerNumberForTernOn = scanner.nextInt(2);
+                if (randomNumberForTernOn == scannerNumberForTernOn) {
+                    resource--;
+                    System.out.println("Компьютер запущен, циклов осталось: " + resource);
+                    isOn = false;
+                } else {
+                    resource = 0;
+                    System.out.println("Произошел сбой, компьютер сгорел");
+                }
             } else {
                 resource = 0;
-                System.out.println("Произошел сбой, компьютер сгорел");
+                System.out.println("Компьютер сгорел");
             }
-        } else {
-            resource = 0;
-            System.out.println("Компьютер сгорел");
         }
         return resource;
     }
 
-    public int turnOff() {
+    public void turnOff() {
         System.out.println("Для выключения компьютера введите число 0 либо 1");
-        int scannerNumberForTernOff = scanner.nextInt();
+        int scannerNumberForTernOff = scanner.nextInt(2);
         int randomNumberForTernOff = random.nextInt(2);
         if (scannerNumberForTernOff == randomNumberForTernOff) {
-            resource--;
             System.out.println("Компьютер выключается");
         } else {
             System.out.println("Компьютер не выключен, произошёл сбой");
         }
-        return resource;
     }
 
     public static void main(String[] args) {
-
-        Computer apple = new Computer(true, true, true, 1);
-                apple.turnOn();
-                apple.turnOn();
-        }
+        Computer asus = new Computer(true, true, true, 15);
+        Computer apple = new Computer(false, false, true, 22);
+        apple.turnOn();
+        apple.turnOn();
+        apple.turnOff();
+    }
 }
-
-
->>>>>>> origin/lesson5
