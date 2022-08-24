@@ -91,8 +91,6 @@ public class Task1 {
         if (string == column) {                                   /*массив квадратный*/
             if (string % 2 == 1) {                                                            /*центр выявляем*/
                 System.out.println("Центр квадратного массива → [" + array.length / 2 + "][" + array.length / 2 + "] = " + array[string / 2][column / 2]);
-
-
             } else {
                 string = array.length - 1;                                                  /*невыявляемый*/
                 column = string;
@@ -133,7 +131,6 @@ public class Task1 {
                     }
                     System.out.println("Центр обновленного массива → [" + (array.length - iteration) / 2 + "][" + (array.length - iteration) / 2 + "] = " + array[string / 2][column / 2]);
                 }
-
             } else {                                                                /*столбцов больше*/
                 do {
                     column--;
@@ -165,6 +162,3 @@ public class Task1 {
         }
     }
 }
-
-
-
