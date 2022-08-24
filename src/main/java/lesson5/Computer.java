@@ -16,6 +16,7 @@ import java.util.Scanner;
         - выключить (аналогично включению)
         - при превышении лимита ресурса комп сгорает */
 
+<<<<<<< HEAD
     public class Computer {
 
         static Scanner scanner = new Scanner(System.in);
@@ -95,3 +96,69 @@ import java.util.Scanner;
             apple.turnOff();
         }
     }
+=======
+public class Computer {
+
+    static Scanner scanner = new Scanner(System.in);
+    static Random random = new Random();
+
+    boolean isOn;
+    boolean processor;
+    boolean hardDrive;
+    boolean memory;
+    int resource;
+
+    public Computer(boolean processor, boolean hardDrive, boolean memory, int resource) {
+        this.processor = processor;
+        this.hardDrive = hardDrive;
+        this.memory = memory;
+        this.resource = resource;
+    }
+
+    public void info() {
+        System.out.println("[есть”, “есть”, “есть”, " + resource + " циклов]");
+    }
+
+    public int turnOn() {
+
+        if (resource > 0) {
+            System.out.println("Для запуска компьютера введите число 0 либо 1");
+            int randomNumberForTernOn = random.nextInt(2);
+            int scannerNumberForTernOn = scanner.nextInt();
+            if (randomNumberForTernOn == scannerNumberForTernOn) {
+                resource--;
+                System.out.println("Компьютер запущен, циклов осталось: " + resource);
+            } else {
+                resource = 0;
+                System.out.println("Произошел сбой, компьютер сгорел");
+            }
+        } else {
+            resource = 0;
+            System.out.println("Компьютер сгорел");
+        }
+        return resource;
+    }
+
+    public int turnOff() {
+        System.out.println("Для выключения компьютера введите число 0 либо 1");
+        int scannerNumberForTernOff = scanner.nextInt();
+        int randomNumberForTernOff = random.nextInt(2);
+        if (scannerNumberForTernOff == randomNumberForTernOff) {
+            resource--;
+            System.out.println("Компьютер выключается");
+        } else {
+            System.out.println("Компьютер не выключен, произошёл сбой");
+        }
+        return resource;
+    }
+
+    public static void main(String[] args) {
+
+        Computer apple = new Computer(true, true, true, 1);
+                apple.turnOn();
+                apple.turnOn();
+        }
+}
+
+
+>>>>>>> origin/lesson5
