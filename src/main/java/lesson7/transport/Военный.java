@@ -5,7 +5,6 @@ public class Военный extends Воздушный {
     private boolean ejectionSystems;
     private int rocket;
 
-
     public Военный(int power, int maxSpeed, String brand, int wingspan, int minRunwayLength, boolean ejectionSystems, int rocket) {
         super(power, maxSpeed, brand, wingspan, minRunwayLength);
         this.ejectionSystems = ejectionSystems;

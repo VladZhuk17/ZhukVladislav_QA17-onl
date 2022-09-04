@@ -10,7 +10,6 @@ public class Легковой extends Наземный {
         this.typeBody = typeBody;
         this.numberPassengers = numberPassengers;
     }
-
     @Override
     public String toString() {
         return "Легковой {" + "power = " + getPower() + " horsepower, powerInKW = " + powerInKW() + ", maxSpeed = " + getMaxSpeed() + " km/h, brand ='" + getBrand() + '\'' +

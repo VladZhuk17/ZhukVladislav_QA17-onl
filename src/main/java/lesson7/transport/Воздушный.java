@@ -1,7 +1,6 @@
 package lesson7.transport;
 
 public abstract class Воздушный extends Транспорт {
-
     private int wingspan;
     private int minRunwayLength;
 

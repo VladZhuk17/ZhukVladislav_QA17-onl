@@ -1,7 +1,6 @@
 package lesson7.transport;
 
 public abstract class Наземный extends Транспорт {
-
     private int wheels;
     private int fuelConsumptionFor100km;
 
@@ -12,7 +11,7 @@ public abstract class Наземный extends Транспорт {
     }
 
     public int getWheels() {
-        return wheels;
+                return wheels;
     }
 
     public int getFuelConsumptionFor100km() {

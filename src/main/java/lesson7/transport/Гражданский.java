@@ -5,7 +5,6 @@ public class Гражданский extends Воздушный {
     private int numberPassengers;
     private boolean businessClass;
 
-
     public Гражданский(int power, int maxSpeed, String brand, int wingspan, int minRunwayLength, int numberPassengers, boolean businessClass) {
         super(power, maxSpeed, brand, wingspan, minRunwayLength);
         this.numberPassengers = numberPassengers;

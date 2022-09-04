@@ -23,6 +23,7 @@ public class Main {
 
         cargoCar.cargoVolume(45333);
         plane.checkNumberPassengers(2322);
+
         fighterJet.checkEjectionSystems();
         fighterJet.shotRocket();
     }

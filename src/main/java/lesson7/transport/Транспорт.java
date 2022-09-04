@@ -1,6 +1,7 @@
 package lesson7.transport;
 
 public abstract class Транспорт {
+
     private int power;
     private int maxSpeed;
     private String brand;
