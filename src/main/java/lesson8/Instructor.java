@@ -1,29 +1,37 @@
 package lesson8;
 
+import java.util.Scanner;
+
 public class Instructor {
 
+    private Scanner scanner = new Scanner(System.in);
+
     private String instructorName;
-    private String courseName;
+    private int instructorID;
 
-    public Instructor(String instructorName, String courseName){
-        this.instructorName=instructorName;
-        this.courseName=courseName;
+    public Instructor() {
+        System.out.println("Введите имя и фамилию преподавателя: ");
+        this.instructorName = scanner.next();
+        this.instructorID = instructorID;
     }
 
-    public String getInstructorName(){
-       return instructorName;
-    }
-    public void setInstructorName(String instructorName){
-        this.instructorName=instructorName;
-    }
-    public String getCourseName(){
-        return courseName;
+    public Instructor(String instructorName) {
+        this.instructorName = instructorName;
     }
 
-    public void setCourseName(String courseName){
-        this.courseName=courseName;
+    public String getInstructorName() {
+        return instructorName;
     }
 
-    public void teach(){}
+    public void setInstructorName(String instructorName) {
+        this.instructorName = instructorName;
+    }
 
+    public int getInstructorID() {
+        return instructorID;
+    }
+
+    public void setInstructorID(int instructorID) {
+        this.instructorID = instructorID;
+    }
 }

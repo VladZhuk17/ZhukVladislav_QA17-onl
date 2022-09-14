@@ -1,10 +1,20 @@
 package lesson8;
 
+import java.util.Scanner;
+
 public class Student {
+
+    private Scanner scanner = new Scanner(System.in);
+
     private String studentName;
-    private String secondName;
+    private Department department;
     private int studentID;
-    protected String courses;
+
+    public Student() {
+        System.out.println("Введите имя и фамилию студента: ");
+        this.studentName = scanner.next();
+        this.studentID = studentID;
+    }
 
     public String getStudentName() {
         return studentName;
@@ -12,14 +22,6 @@ public class Student {
 
     public void setStudentName(String studentName) {
         this.studentName = studentName;
-    }
-
-    public String getSecondName() {
-        return secondName;
-    }
-
-    public void setSecondName(String secondName) {
-        this.secondName = secondName;
     }
 
     public int getStudentID() {
@@ -30,18 +32,16 @@ public class Student {
         this.studentID = studentID;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
 
-
-    public Student(String studentName, String secondName, int studentID ) {
-        this.studentName = studentName;
-        this.secondName = secondName;
-        this.studentID = studentID;
-
+    public void setDepartment(Department department) {
+        this.department = department;
     }
 
     @Override
     public String toString() {
-        return "Student: " + studentName + " " + secondName + ", studentID = " + studentID;
+        return "Student: " + studentName + ", department: " + department;
     }
-
 }

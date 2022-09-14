@@ -1,36 +1,68 @@
 package lesson8;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class Department {
 
-    private String departmentName;
+    private Scanner scanner = new Scanner(System.in);
 
-        public Department(String departmentName) {
-        this.departmentName = departmentName;
+    private String departmentName;
+    private int departmentID;
+    private ArrayList<Instructor> instructorList = new ArrayList<>();
+
+
+    public Department() {
+        System.out.println("Введите название факультета: ");
+        this.departmentName = scanner.next();
+        this.departmentID = departmentID;
+    }
+
+    public ArrayList<Instructor> getInstructorList() {
+        return instructorList;
     }
 
     public String getDepartmentName() {
         return departmentName;
     }
-    public void setDepartmentName(String departmentName){
-        this.departmentName=departmentName;
+
+    public void setDepartmentName(String departmentName) {
+        this.departmentName = departmentName;
     }
 
-    public void addInstructor() {
+    public int getDepartmentID() {
+        return departmentID;
     }
 
-    public void removeInstructor() {
+    public void setDepartmentID(int departmentID) {
+        this.departmentID = departmentID;
     }
 
-    public void getInstructor() {
+    public void addInstructor(Instructor instructor) {
+        instructorList.add(instructor);
     }
 
-    public void getAllInstructor() {
+    public void removeInstructor(String instructorName) {
+        for (int i = 0; i < instructorList.size(); i++) {
+            if (instructorList.get(i).getInstructorName().equals(instructorName)) {
+                instructorList.remove(instructorList.get(i));
+            }
+            break;
+        }
     }
 
-    List<Course > courseList = new ArrayList<>();
+    public Instructor getInstructor(int instructorID) {
+        for (int i = 0; i < instructorList.size(); i++) {
+            if (instructorList.get(i).getInstructorName().equals(instructorID)) {
+                return instructorList.get(i);
+            }
+        }
+        return null;
+    }
+
+    public ArrayList getAllInstructors(ArrayList instructorList) {
+        return instructorList;
+    }
 
     @Override
     public String toString() {
