@@ -11,10 +11,9 @@ public class Department {
     private int departmentID;
     private ArrayList<Instructor> instructorList = new ArrayList<>();
 
-
     public Department() {
         System.out.println("Введите название факультета: ");
-        this.departmentName = scanner.next();
+        this.departmentName = scanner.nextLine();
         this.departmentID = departmentID;
     }
 
@@ -60,7 +59,7 @@ public class Department {
         return null;
     }
 
-    public ArrayList getAllInstructors(ArrayList instructorList) {
+    public ArrayList getAllInstructors() {
         return instructorList;
     }
 

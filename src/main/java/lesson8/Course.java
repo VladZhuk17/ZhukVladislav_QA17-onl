@@ -33,7 +33,6 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course:  " + courseName + ", courseID = " + courseID+", instructor: "+ instructor;
+        return "Course:  " + courseName + ", courseID = " + courseID + ", instructor: " + instructor;
     }
 }
-

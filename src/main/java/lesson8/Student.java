@@ -12,7 +12,7 @@ public class Student {
 
     public Student() {
         System.out.println("Введите имя и фамилию студента: ");
-        this.studentName = scanner.next();
+        this.studentName = scanner.nextLine();
         this.studentID = studentID;
     }
 
@@ -42,6 +42,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student: " + studentName + ", department: " + department;
+        return "Student: " + studentName;
     }
 }

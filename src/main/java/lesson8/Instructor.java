@@ -34,4 +34,9 @@ public class Instructor {
     public void setInstructorID(int instructorID) {
         this.instructorID = instructorID;
     }
+
+    @Override
+    public String toString() {
+        return instructorName;
+    }
 }
