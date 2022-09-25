@@ -4,6 +4,9 @@ import lesson8.Exceptions.MentorNotFoundException;
 import lesson8.Exceptions.StudentNotFoundException;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 public class University {
 
@@ -103,6 +106,7 @@ public class University {
     public Student getStudentByNameAndNameHisInstructorName(String studentName, String instructorName) throws StudentNotFoundException {
         Department department = null;
         ArrayList<Student> lookingForStudentList = new ArrayList<>();
+        LinkedHashMap<Student, ArrayList<Instructor>> map = new LinkedHashMap<>();
 
         for (Student student : studentList) {
             if (student.getStudentName().equals(studentName)) {
@@ -135,4 +139,28 @@ public class University {
         }
         return null;
     }
+
+    private Map<Student, ArrayList<Instructor>> getStudentAndInstructorMap() {
+        Map<Student, ArrayList<Instructor>> map = new HashMap<>();
+        for (Student student : studentList) {
+            map.put(student, student.getDepartment().getAllInstructors());
+        }
+        return map;
+    }
+
+    public void printMap() {
+        Map <Student, ArrayList<Instructor>> studentAndInstructorList = getStudentAndInstructorMap();
+        for(Student student: studentAndInstructorList.keySet()){
+            StringBuilder instructorNames = new StringBuilder();
+            for(int i=0; i<studentAndInstructorList.get(student).size(); i++){
+                instructorNames.append(studentAndInstructorList.get(student).get(i).getInstructorName());
+                if(i != studentAndInstructorList.get(student).size()-1){
+                    instructorNames.append(", ");
+                }
+            }
+            System.out.println(student.getStudentName() + ": " + instructorNames);
+        }
+    }
+
+
 }

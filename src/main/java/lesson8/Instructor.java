@@ -1,5 +1,7 @@
 package lesson8;
 
+import lesson8.Utils.UtilMethods;
+
 import java.util.Scanner;
 
 public class Instructor {
@@ -37,6 +39,6 @@ public class Instructor {
 
     @Override
     public String toString() {
-        return instructorName;
+        return " Instructor: " + instructorName + ", ID = "+ UtilMethods.randomPersonID();
     }
 }
